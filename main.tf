@@ -1,11 +1,19 @@
 /**
  * # Terraform AWS MemoryDB Cluster
  *
- * Terraform module which creates a MemoryDB Cluster. The focus on this
- * module lies within it's simplicity by providing default values that
- * should make sense for most use cases.
+ * This Terraform module provides a preconfigured solution for setting up
+ * AWS MemoryDB Clusters in your AWS account. With this module, you can quickly
+ * and easily launch a fully-functional MemoryDB Cluster that meets your
+ * specific needs and requirements. Our team has extensive experience working
+ * with AWS MemoryDB and has optimized this module to provide the best possible
+ * experience for users.
  *
- * It also makes use of the latest Terraform
+ * By using this Terraform module, you can save time and effort in setting up
+ * your MemoryDB Cluster, as well as avoid common mistakes and pitfalls. The
+ * module encapsulates all necessary configurations and provides a seamless,
+ * turnkey solution for launching your MemoryDB Cluster. Whether you are just
+ * getting started with AWS MemoryDB or looking for a more efficient way to
+ * manage your clusters, this Terraform module is an excellent choice.
  */
 resource "aws_memorydb_cluster" "main" {
   name        = var.name
