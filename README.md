@@ -89,9 +89,9 @@ It also makes use of the latest Terraform
 module "basic-example" {
   source = "../../"
 
-  description            = "The caching cluster"
+  description            = "PHP Sessions"
   engine_version         = "6.2"
-  name                   = "caching-cluster"
+  name                   = "session"
   node_type              = "db.t4g.small"
   num_replicas_per_shard = 0
   num_shards             = 1
