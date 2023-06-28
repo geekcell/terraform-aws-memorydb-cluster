@@ -5,6 +5,9 @@
 [![Validate](https://github.com/geekcell/terraform-aws-memorydb-cluster/actions/workflows/validate.yaml/badge.svg)](https://github.com/geekcell/terraform-aws-memorydb-cluster/actions/workflows/validate.yaml)
 [![Lint](https://github.com/geekcell/terraform-aws-memorydb-cluster/actions/workflows/linter.yaml/badge.svg)](https://github.com/geekcell/terraform-aws-memorydb-cluster/actions/workflows/linter.yaml)
 
+<!--
+Comment in if Bridgecrew is configured
+
 ### Security
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/geekcell/terraform-aws-memorydb-cluster/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=geekcell%2Fterraform-aws-memorydb-cluster&benchmark=INFRASTRUCTURE+SECURITY)
 
@@ -29,3 +32,5 @@
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/geekcell/terraform-aws-memorydb-cluster/nist)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=geekcell%2Fterraform-aws-memorydb-cluster&benchmark=NIST-800-53)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/geekcell/terraform-aws-memorydb-cluster/hipaa)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=geekcell%2Fterraform-aws-memorydb-cluster&benchmark=HIPAA)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/geekcell/terraform-aws-memorydb-cluster/fedramp_moderate)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=geekcell%2Fterraform-aws-memorydb-cluster&benchmark=FEDRAMP+%28MODERATE%29)
+
+-->

@@ -1,11 +1,8 @@
 /**
  * # Terraform AWS MemoryDB Cluster
  *
- * Terraform module which creates a MemoryDB Cluster. The focus on this
- * module lies within it's simplicity by providing default values that
- * should make sense for most use cases.
- *
- * It also makes use of the latest Terraform
+ * Terraform module which creates a MemoryDB Cluster. The focus on this module lies within it's simplicity by providing
+ * default values that should make sense for most use cases.
  */
 resource "aws_memorydb_cluster" "main" {
   name        = var.name
@@ -44,34 +41,44 @@ resource "aws_memorydb_cluster" "main" {
 }
 
 module "memorydb_parameter_group" {
-  source     = "./modules/memorydb_parameter_group"
+  source = "./modules/memorydb_parameter_group"
+
   name       = var.name
   parameters = var.parameters
 }
 
 module "memorydb_user" {
   source = "./modules/memorydb_user"
-  name   = var.name
-  users  = var.users
+
+  name  = var.name
+  users = var.users
 }
 
 module "memorydb_subnet_group" {
-  source     = "./modules/memorydb_subnet_group"
+  source = "./modules/memorydb_subnet_group"
+
   name       = var.name
   subnet_ids = var.subnet_ids
 }
 
 module "kms" {
   for_each = toset(["storage"])
-  source   = "github.com/geekcell/terraform-aws-kms?ref=v1.0"
-  alias    = format("alias/rdb/cluster/%s/${each.value}", var.name)
+
+  source  = "geekcell/kms/aws"
+  version = ">= 1.0.0, < 2.0.0"
+
+  alias = "alias/rdb/cluster/${var.name}/${each.value}"
+  tags  = var.tags
 }
 
 module "sns" {
   for_each = toset(["notification"])
 
-  source = "github.com/geekcell/terraform-aws-sns-email-notification?ref=v1.0"
-  name   = "${var.name}-memorydb-${each.value}"
+  source  = "geekcell/sns-email-notification/aws"
+  version = ">= 1.0.0, < 2.0.0"
 
+  name            = "${var.name}-memorydb-${each.value}"
   email_addresses = var.recipients
+
+  tags = var.tags
 }
